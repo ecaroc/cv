@@ -95,7 +95,6 @@
       color: #f0f9ff;
     }
 
-    /* Estilo mejorado para la foto - alta calidad */
     .photo-container {
       flex-shrink: 0;
     }
@@ -109,15 +108,11 @@
       background: #ffffff;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       transition: transform 0.2s;
-      /* Aseguramos alta calidad de imagen */
-      image-rendering: auto;
-      image-rendering: crisp-edges;
     }
     .profile-photo:hover {
       transform: scale(1.02);
     }
     
-    /* Estilo para la imagen por defecto (inicial) mientras no se suba la foto real */
     .default-photo {
       width: 140px;
       height: 140px;
@@ -314,7 +309,6 @@
 </head>
 <body>
 <div class="cv-container">
-  <!-- Encabezado con foto de alta calidad -->
   <div class="header">
     <div class="header-info">
       <div class="name-title">
@@ -333,18 +327,15 @@
       </div>
     </div>
     <div class="photo-container">
-      <img src="foto-edward.jpg" alt="Edward Caro" class="profile-photo" 
-           onerror="this.style.display='none'; document.getElementById('defaultPhotoDisplay').style.display='flex';">
+      <div class="default-photo" id="defaultPhotoDisplay">EC</div>
     </div>
   </div>
 
-  <!-- Resumen profesional -->
   <div class="profile">
     <p><i class="fas fa-quote-left" style="margin-right: 8px; color: #2c7da0;"></i> Profesional enfocado en liderazgo de iniciativas de transformación digital, gobernanza y ejecución estratégica, alineando tecnología, negocio y generación de valor organizacional. Dinámico, habituado al trabajo bajo presión y en equipo; con gran sentido de responsabilidad y alta vocación de servicio, capaz de generar valor agregado mediante creación de ideas e iniciativa propia para la resolución de problemas.</p>
   </div>
 
   <div class="two-columns">
-    <!-- Columna lateral -->
     <div class="sidebar">
       <div class="section">
         <div class="section-title"><i class="fas fa-graduation-cap"></i> Formación Clave</div>
@@ -354,6 +345,12 @@
           <div class="edu-period">2025-2026 (Cursando)</div>
           <div class="edu-title">Especialización en Ciberseguridad y Ciberdefensa</div>
           <div class="edu-institution">Universidad Santo Tomás - Colombia</div>
+        </div>
+        
+        <div class="education-entry">
+          <div class="edu-period">2024</div>
+          <div class="edu-title">Maestría en Ingeniería Aplicada en Dirección de Proyectos</div>
+          <div class="edu-institution">España</div>
         </div>
         
         <div class="education-entry">
@@ -449,15 +446,17 @@
       </div>
     </div>
 
-    <!-- Columna principal: Experiencia y proyectos actualizada -->
     <div class="main-content">
       <div class="section">
         <div class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Profesional</div>
         
+        <!-- Orden descendente: más reciente primero -->
+        
+        <!-- 2020 - Actualidad -->
         <div class="experience-entry">
           <div class="exp-period">2020 - Actualidad</div>
           <div class="exp-title">Gestor de Proyectos TI / Líder de Transformación Digital</div>
-          <div class="exp-company">Loyalty Perú s.a.c. - Surco, Lima</div>
+          <div class="exp-company">Loyalty Perú s.a.c.</div>
           <ul class="project-list">
             <li>Profesional enfocado en liderazgo de iniciativas de transformación digital, gobernanza y ejecución estratégica, alineando tecnología, negocio y generación de valor organizacional.</li>
             <li>Gestión integral de proyectos tecnológicos y coordinación de proveedores estratégicos.</li>
@@ -476,12 +475,23 @@
           </div>
         </div>
 
+        <!-- 2023 Freelance -->
+        <div class="experience-entry">
+          <div class="exp-period">2023</div>
+          <div class="exp-title">Administrador de Gestión de Contenidos WEB (Freelance)</div>
+          <div class="exp-company">Quality Clean Services - Remoto</div>
+          <ul class="project-list">
+            <li>Administración y configuración de sitio web con WordPress y GoDaddy.</li>
+          </ul>
+        </div>
+
+        <!-- 2011 - 2020 -->
         <div class="experience-entry">
           <div class="exp-period">2011 - 2020</div>
           <div class="exp-title">Analista de Sistemas</div>
           <div class="exp-company">Loyalty Perú s.a.c.</div>
           <ul class="project-list">
-            <li>Análisis, diseño, arquitectura, desarrollo e implementación de programas de fidelización (Alicorp – Aliados e Impulsos, Eucerin, San Fernando Club de Premios, Medifarma, Pacasmayo, Coca Cola Club del éxito).</li>
+            <li>Análisis, diseño, arquitectura, desarrollo e implementación de programas de fidelización para Alicorp, Eucerin, San Fernando, Medifarma, Pacasmayo.</li>
             <li>Implementación de servicios web REST y SOAP con integración a ASBANC, Izipay, Alignet, Red Digital, Lifemiles, Unibanca y Facturación Electrónica.</li>
             <li>Desarrollo y mantenimiento de páginas web en .Net: www.bonus.pe, www.puntocash.pe, www.primaxtepremia.com.pe</li>
             <li>Mantenimiento de módulo de canje, recarga de soles y conversión de puntos para app Bonus (iOS, Android, Huawei).</li>
@@ -489,6 +499,7 @@
           </ul>
         </div>
 
+        <!-- 2009 - 2011 -->
         <div class="experience-entry">
           <div class="exp-period">2009 - 2011</div>
           <div class="exp-title">Programador</div>
@@ -499,6 +510,7 @@
           </ul>
         </div>
 
+        <!-- 2007 - 2009 -->
         <div class="experience-entry">
           <div class="exp-period">2007 - 2009</div>
           <div class="exp-title">Operador de Sistemas</div>
@@ -508,15 +520,7 @@
           </ul>
         </div>
 
-        <div class="experience-entry">
-          <div class="exp-period">2023</div>
-          <div class="exp-title">Administrador de Gestión de Contenidos WEB (Freelance)</div>
-          <div class="exp-company">Quality Clean Services - Remoto</div>
-          <ul class="project-list">
-            <li>Administración y configuración de sitio web con WordPress y GoDaddy.</li>
-          </ul>
-        </div>
-
+        <!-- 2006 -->
         <div class="experience-entry">
           <div class="exp-period">2006</div>
           <div class="exp-title">Programador</div>
@@ -524,6 +528,7 @@
           <ul class="project-list"><li>Mantenimiento del sistema de Contabilidad, nuevas funcionalidades.</li></ul>
         </div>
 
+        <!-- 2004-2005 -->
         <div class="experience-entry">
           <div class="exp-period">2004-2005</div>
           <div class="exp-title">Programador</div>
@@ -532,7 +537,6 @@
         </div>
       </div>
 
-      <!-- Proyectos digitales -->
       <div class="section">
         <div class="section-title"><i class="fas fa-globe"></i> Portafolio Digital & Soluciones</div>
         <div class="web-links">
@@ -552,7 +556,6 @@
         </ul>
       </div>
       
-      <!-- Competencias adicionales -->
       <div class="section">
         <div class="section-title"><i class="fas fa-microchip"></i> Competencias Técnicas</div>
         <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
