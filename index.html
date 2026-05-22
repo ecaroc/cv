@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Edward Caro | Liderazgo TI · Gestión Estratégica · Transformación Digital</title>
+  <!-- Fuentes modernas y limpias -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f5;
+      font-family: 'Inter', sans-serif;
+      color: #1e2a3e;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .cv-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0f2b3d 0%, #1b4a6e 100%);
+      padding: 2rem 2.5rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .header-info {
+      flex: 1;
+    }
+
+    .name-title h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(2px);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.2);
+      padding: 0.8rem 1rem;
+      border-radius: 60px;
+      width: fit-content;
+    }
+
+    .contact-bar i {
+      width: 1.4rem;
+      color: #c6e9ff;
+    }
+
+    .contact-bar span {
+      color: #f0f9ff;
+    }
+
+    /* Estilo mejorado para la foto - alta calidad */
+    .photo-container {
+      flex-shrink: 0;
+    }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid rgba(255,255,255,0.6);
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+      /* Aseguramos alta calidad de imagen */
+      image-rendering: auto;
+      image-rendering: crisp-edges;
+    }
+    .profile-photo:hover {
+      transform: scale(1.02);
+    }
+    
+    /* Estilo para la imagen por defecto (inicial) mientras no se suba la foto real */
+    .default-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2c7da0, #1b4a6e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: white;
+      border: 4px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .profile {
+      padding: 2rem 2.5rem;
+      background: #f9fbfd;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .profile p {
+      font-size: 1.05rem;
+      color: #2c3e4e;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .sidebar {
+      flex: 1.2;
+      background: #fefefe;
+      padding: 2rem 2rem 2rem 2.5rem;
+      border-right: 1px solid #e9edf2;
+    }
+
+    .main-content {
+      flex: 2.4;
+      padding: 2rem 2.5rem 2rem 2rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0f3b4f;
+      border-left: 4px solid #2c7da0;
+      padding-left: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-item, .lang-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-level {
+      font-size: 0.8rem;
+      color: #3a6b8c;
+    }
+
+    .education-entry, .course-entry, .experience-entry {
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-period, .exp-period, .course-period {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #2c7da0;
+      background: #eef4f9;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-title, .exp-title, .course-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      color: #0f2b3d;
+    }
+
+    .edu-institution, .exp-company, .course-place {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #4a627a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .project-list {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .project-list li {
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+      color: #2c3e4e;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: 0;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 0.6rem;
+    }
+
+    .tech-tag {
+      background: #eaf4f8;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #1f5e7e;
+    }
+
+    @media (max-width: 780px) {
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      .two-columns {
+        flex-direction: column;
+      }
+      .header {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-bar {
+        justify-content: center;
+      }
+      .profile, .sidebar, .main-content {
+        padding: 1.5rem;
+      }
+      .name-title h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .print-friendly {
+      font-size: 0.75rem;
+      text-align: center;
+      padding: 1rem;
+      background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .inline-icon {
+      margin-right: 6px;
+      width: 18px;
+      color: #2c7da0;
+    }
+    .web-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .web-links span i {
+      color: #2c7da0;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+<div class="cv-container">
+  <!-- Encabezado con foto de alta calidad -->
+  <div class="header">
+    <div class="header-info">
+      <div class="name-title">
+        <h1>EDWARD ALBERTO CARO CONTRERAS</h1>
+        <div style="font-size: 1.3rem; font-weight: 500; opacity: 0.9;">Liderazgo TI · Gestión Estratégica · Transformación Digital</div>
+      </div>
+      <div class="badge-area">
+        <span class="badge"><i class="fas fa-code"></i> 24+ años experiencia</span>
+        <span class="badge"><i class="fas fa-chart-line"></i> PMO / VMO</span>
+        <span class="badge"><i class="fas fa-shield-alt"></i> Ciberseguridad (en formación)</span>
+      </div>
+      <div class="contact-bar">
+        <span><i class="fas fa-map-marker-alt"></i> Av. Roosevelt 810, Santiago de Surco, Lima - Perú</span>
+        <span><i class="fas fa-phone-alt"></i> +51 9919-00883</span>
+        <span><i class="fas fa-envelope"></i> eacaroc@gmail.com</span>
+      </div>
+    </div>
+    <div class="photo-container">
+      <img src="foto-edward.jpg" alt="Edward Caro" class="profile-photo" 
+           onerror="this.style.display='none'; document.getElementById('defaultPhotoDisplay').style.display='flex';">
+    </div>
+  </div>
+
+  <!-- Resumen profesional -->
+  <div class="profile">
+    <p><i class="fas fa-quote-left" style="margin-right: 8px; color: #2c7da0;"></i> Profesional enfocado en liderazgo de iniciativas de transformación digital, gobernanza y ejecución estratégica, alineando tecnología, negocio y generación de valor organizacional. Dinámico, habituado al trabajo bajo presión y en equipo; con gran sentido de responsabilidad y alta vocación de servicio, capaz de generar valor agregado mediante creación de ideas e iniciativa propia para la resolución de problemas.</p>
+  </div>
+
+  <div class="two-columns">
+    <!-- Columna lateral -->
+    <div class="sidebar">
+      <div class="section">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Formación Clave</div>
+        
+        <!-- Orden descendente: más reciente primero -->
+        <div class="education-entry">
+          <div class="edu-period">2025-2026 (Cursando)</div>
+          <div class="edu-title">Especialización en Ciberseguridad y Ciberdefensa</div>
+          <div class="edu-institution">Universidad Santo Tomás - Colombia</div>
+        </div>
+        
+        <div class="education-entry">
+          <div class="edu-period">2022-2023</div>
+          <div class="edu-title">Maestría en Project Management</div>
+          <div class="edu-institution">Escuela de Postgrado UTP - Perú</div>
+        </div>
+        
+        <div class="education-entry">
+          <div class="edu-period">2017</div>
+          <div class="edu-title">Titulación en Ingeniería de Software</div>
+          <div class="edu-institution">Universidad Tecnológica del Perú</div>
+        </div>
+        
+        <div class="education-entry">
+          <div class="edu-period">2007-2012</div>
+          <div class="edu-title">Bachiller en Ingeniería de Software</div>
+          <div class="edu-institution">Universidad Tecnológica del Perú</div>
+        </div>
+        
+        <hr>
+        <div class="section-title"><i class="fas fa-laptop-code"></i> Tecnologías & Herramientas</div>
+        <div class="skill-item">
+          <span class="skill-name">Lenguajes / Frameworks</span>
+          <div class="tech-tags">
+            <span class="tech-tag">Visual .Net (Avanzado)</span>
+            <span class="tech-tag">Java/Kotlin</span>
+            <span class="tech-tag">Swift (iOS)</span>
+            <span class="tech-tag">Genexus (v8 a v16)</span>
+            <span class="tech-tag">C#</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Bases de Datos</span>
+          <div class="tech-tags">
+            <span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Oracle Database</span>
+            <span class="tech-tag">DB2 AS400</span>
+          </div>
+          <span class="skill-level">Nivel avanzado en administración y optimización</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Arquitectura & Web Services</span>
+          <div class="tech-tags">
+            <span class="tech-tag">REST</span>
+            <span class="tech-tag">SOAP</span>
+            <span class="tech-tag">API Rest</span>
+            <span class="tech-tag">.Net</span>
+            <span class="tech-tag">WordPress</span>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Metodologías / Gestión</span>
+          <div class="tech-tags">
+            <span class="tech-tag">Project Management</span>
+            <span class="tech-tag">PMO/VMO</span>
+            <span class="tech-tag">KPIs & Mejora Continua</span>
+            <span class="tech-tag">SCRUM</span>
+          </div>
+        </div>
+        <hr>
+        <div class="section-title"><i class="fas fa-language"></i> Idiomas</div>
+        <div class="lang-item"><span class="skill-name">Inglés <span class="skill-level">(Intermedio B2)</span></span></div>
+        <div class="lang-item"><span class="skill-name">Portugués <span class="skill-level">(Intermedio)</span></span></div>
+        <hr>
+        <div class="section-title"><i class="fas fa-certificate"></i> Capacitaciones Relevantes</div>
+        <div class="course-entry">
+          <div class="course-period">2020-2021</div>
+          <div class="course-title">Project Management Specialist</div>
+          <div class="course-place">Platzi - Fundamentos, riesgos, cierre de proyectos</div>
+        </div>
+        <div class="course-entry">
+          <div class="course-period">2019-2020</div>
+          <div class="course-title">Analista Genexus v16 (WEB, API Rest, Móviles)</div>
+          <div class="course-place">Genexus Training</div>
+        </div>
+        <div class="course-entry">
+          <div class="course-period">2018-2019</div>
+          <div class="course-title">Android & iOS Mobile Developer</div>
+          <div class="course-place">Platzi / Xcode, Swift, Kotlin, Java</div>
+        </div>
+        <div class="course-entry">
+          <div class="course-period">2018</div>
+          <div class="course-title">Huawei Mobile Services (AppGallery)</div>
+          <div class="course-place">Platzi</div>
+        </div>
+        <div class="course-entry">
+          <div class="course-period">2012</div>
+          <div class="course-title">Especialista en Asterisk (Telefonía IP)</div>
+          <div class="course-place">TECSUP</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna principal: Experiencia y proyectos actualizada -->
+    <div class="main-content">
+      <div class="section">
+        <div class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Profesional</div>
+        
+        <div class="experience-entry">
+          <div class="exp-period">2020 - Actualidad</div>
+          <div class="exp-title">Gestor de Proyectos TI / Líder de Transformación Digital</div>
+          <div class="exp-company">Loyalty Perú s.a.c. - Surco, Lima</div>
+          <ul class="project-list">
+            <li>Profesional enfocado en liderazgo de iniciativas de transformación digital, gobernanza y ejecución estratégica, alineando tecnología, negocio y generación de valor organizacional.</li>
+            <li>Gestión integral de proyectos tecnológicos y coordinación de proveedores estratégicos.</li>
+            <li>Liderazgo de integraciones con plataformas financieras y pasarelas de pago (Alignet, Izipay).</li>
+            <li>Coordinación transversal entre negocio, desarrollo, QA, infraestructura y terceros.</li>
+            <li>Implementación de prácticas de seguimiento ejecutivo, KPIs y mejora continua.</li>
+            <li>Participación en soluciones de fidelización y plataformas digitales para marcas líderes como Alicorp, Pacasmayo y CNCH.</li>
+            <li>Enfoque en PMO/VMO, automatización, eficiencia operativa y transformación organizacional.</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">Gobernanza TI</span>
+            <span class="tech-tag">KPIs</span>
+            <span class="tech-tag">PMO/VMO</span>
+            <span class="tech-tag">Automatización</span>
+            <span class="tech-tag">Proveedores estratégicos</span>
+          </div>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2011 - 2020</div>
+          <div class="exp-title">Analista de Sistemas</div>
+          <div class="exp-company">Loyalty Perú s.a.c.</div>
+          <ul class="project-list">
+            <li>Análisis, diseño, arquitectura, desarrollo e implementación de programas de fidelización (Alicorp – Aliados e Impulsos, Eucerin, San Fernando Club de Premios, Medifarma, Pacasmayo, Coca Cola Club del éxito).</li>
+            <li>Implementación de servicios web REST y SOAP con integración a ASBANC, Izipay, Alignet, Red Digital, Lifemiles, Unibanca y Facturación Electrónica.</li>
+            <li>Desarrollo y mantenimiento de páginas web en .Net: www.bonus.pe, www.puntocash.pe, www.primaxtepremia.com.pe</li>
+            <li>Mantenimiento de módulo de canje, recarga de soles y conversión de puntos para app Bonus (iOS, Android, Huawei).</li>
+            <li>Implementación de pasarelas de pago para entornos móviles y web.</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2009 - 2011</div>
+          <div class="exp-title">Programador</div>
+          <div class="exp-company">Loyalty Perú s.a.c.</div>
+          <ul class="project-list">
+            <li>Desarrollo del módulo de afiliación y cálculo de puntos para Alicorp, Axur, Molitalia y Celima (Cliente/Servidor WIN).</li>
+            <li>Mantenimiento de módulos de fidelización Tarjeta BONUS y central telefónica Asterisk (Linux).</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2007 - 2009</div>
+          <div class="exp-title">Operador de Sistemas</div>
+          <div class="exp-company">Loyalty Perú s.a.c.</div>
+          <ul class="project-list">
+            <li>Procesos batch, monitoreo de servidores AS400, Windows, Linux, backup y detección/corrección de errores.</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2023</div>
+          <div class="exp-title">Administrador de Gestión de Contenidos WEB (Freelance)</div>
+          <div class="exp-company">Quality Clean Services - Remoto</div>
+          <ul class="project-list">
+            <li>Administración y configuración de sitio web con WordPress y GoDaddy.</li>
+          </ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2006</div>
+          <div class="exp-title">Programador</div>
+          <div class="exp-company">Embutidos Americana s.a.c.</div>
+          <ul class="project-list"><li>Mantenimiento del sistema de Contabilidad, nuevas funcionalidades.</li></ul>
+        </div>
+
+        <div class="experience-entry">
+          <div class="exp-period">2004-2005</div>
+          <div class="exp-title">Programador</div>
+          <div class="exp-company">Centro de Investigación y Desarrollo - I.S.T. Paul Müller</div>
+          <ul class="project-list"><li>Desarrollo de aplicaciones cliente/servidor: Biblioteca, Planilla, Pre-matrícula.</li></ul>
+        </div>
+      </div>
+
+      <!-- Proyectos digitales -->
+      <div class="section">
+        <div class="section-title"><i class="fas fa-globe"></i> Portafolio Digital & Soluciones</div>
+        <div class="web-links">
+          <span><i class="fas fa-check-circle"></i> www.bonus.pe</span>
+          <span><i class="fas fa-check-circle"></i> www.puntocash.pe</span>
+          <span><i class="fas fa-check-circle"></i> www.primaxtepremia.com.pe</span>
+          <span><i class="fas fa-check-circle"></i> quality-clean-services.com</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">App Bonus iOS/Android/Huawei</span>
+          <span class="tech-tag">Pasarelas Alignet & Izipay</span>
+          <span class="tech-tag">API REST/SOAP</span>
+        </div>
+        <ul class="project-list" style="margin-top: 0.8rem;">
+          <li>Conversión de puntos a soles, Transferencia de soles y puntos, Recarga de monedero en plataformas móviles.</li>
+          <li>Liderazgo técnico en integraciones financieras y soluciones de fidelización para grandes marcas.</li>
+        </ul>
+      </div>
+      
+      <!-- Competencias adicionales -->
+      <div class="section">
+        <div class="section-title"><i class="fas fa-microchip"></i> Competencias Técnicas</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div><i class="fas fa-database inline-icon"></i> SQL Server, Oracle, MySQL, DB2</div>
+          <div><i class="fab fa-windows inline-icon"></i> Visual Studio .Net, C#</div>
+          <div><i class="fas fa-mobile-alt inline-icon"></i> Xcode, Android Studio</div>
+          <div><i class="fas fa-code-branch inline-icon"></i> Genexus v8-v16</div>
+          <div><i class="fas fa-phone-alt inline-icon"></i> Asterisk PBX</div>
+        </div>
+        <hr>
+        <div class="section-title"><i class="fas fa-chart-line"></i> Gestión Estratégica & PMO</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Transformación Digital</span>
+          <span class="tech-tag">Gobernanza TI</span>
+          <span class="tech-tag">KPIs & Mejora Continua</span>
+          <span class="tech-tag">Coordinación transversal</span>
+          <span class="tech-tag">Eficiencia operativa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="print-friendly">
+    <i class="fas fa-sync-alt"></i> Actualizado 2025 · Edward Alberto Caro Contreras · Liderazgo TI · Transformación Digital · PMO/VMO · Ciberseguridad en formación
+  </div>
+</div>
+</body>
+</html>
